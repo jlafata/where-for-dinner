@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="where-for-dinner-api-gateway" />
+        <module name="where-for-dinner-search" />
+        <module name="where-for-dinner-search-proc" />
+        <module name="where-for-dinner-availability" />
+        <module name="where-for-dinner-crawler" />
+        <module name="where-for-dinner-notify" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="where-for-dinner-api-gateway" target="17" />
+      <module name="where-for-dinner-availability" target="17" />
+      <module name="where-for-dinner-crawler" target="17" />
+      <module name="where-for-dinner-notify" target="17" />
+      <module name="where-for-dinner-parent" target="1.5" />
+      <module name="where-for-dinner-search" target="17" />
+      <module name="where-for-dinner-search-proc" target="17" />
+    </bytecodeTargetLevel>
+  </component>
+</project>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/where-for-dinner-api-gateway/where-for-dinner-api-gateway.iml" filepath="$PROJECT_DIR$/where-for-dinner-api-gateway/where-for-dinner-api-gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/where-for-dinner-availability/where-for-dinner-availability.iml" filepath="$PROJECT_DIR$/where-for-dinner-availability/where-for-dinner-availability.iml" />
+      <module fileurl="file://$PROJECT_DIR$/where-for-dinner-crawler/where-for-dinner-crawler.iml" filepath="$PROJECT_DIR$/where-for-dinner-crawler/where-for-dinner-crawler.iml" />
+      <module fileurl="file://$PROJECT_DIR$/where-for-dinner-notify/where-for-dinner-notify.iml" filepath="$PROJECT_DIR$/where-for-dinner-notify/where-for-dinner-notify.iml" />
+      <module fileurl="file://$PROJECT_DIR$/where-for-dinner-parent.iml" filepath="$PROJECT_DIR$/where-for-dinner-parent.iml" />
+      <module fileurl="file://$PROJECT_DIR$/where-for-dinner-search/where-for-dinner-search.iml" filepath="$PROJECT_DIR$/where-for-dinner-search/where-for-dinner-search.iml" />
+      <module fileurl="file://$PROJECT_DIR$/where-for-dinner-search-proc/where-for-dinner-search-proc.iml" filepath="$PROJECT_DIR$/where-for-dinner-search-proc/where-for-dinner-search-proc.iml" />
+    </modules>
+  </component>
+</project>

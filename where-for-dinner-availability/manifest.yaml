@@ -1,0 +1,25 @@
+---
+applications:
+  - name: where-for-dinner-availability
+    path: ./target/where-for-dinner-availability-0.0.1-SNAPSHOT.jar
+    # metadata requires cf cli v 7 or higher, I'm using v 8, that works
+    metadata:
+      labels:
+        app: where-for-dinner-availability
+        foundation: homelab
+    services: [ wfd-search-db, wfd-notify-q ]
+    # managing custom buildpacks in cloud foundry
+    # https://docs.cloudfoundry.org/adminguide/buildpacks.html
+    buildpacks:
+      # support for java 21 is called out in this release
+      - https://github.com/cloudfoundry/java-buildpack#v4.64.0
+    # latest 1/6/2024
+    #    - https://github.com/cloudfoundry/java-buildpack#v4.65.0
+    # should also be latest
+    #    - https://github.com/cloudfoundry/java-buildpack.git
+    env:
+      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ }}'
+# to debug cf push
+#      JBP_LOG_LEVEL: DEBUG
+#      JAVA_OPTS: -Dlogging.level.root=DEBUG, -Dlogging.level.org.cloudfoundry=DEBUG, -Dlogging.level.org.springframework=DEBUG
+

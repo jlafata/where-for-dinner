@@ -1,0 +1,18 @@
+---
+applications:
+  - name: where-for-dinner-ui
+    path: build
+    memory: 1G
+    # metadata requires cf cli v 7 or higher, I'm using v 8, that works
+    metadata:
+      labels:
+        app: where-for-dinner-ui
+        foundation: homelab
+#    services: [ wfd-search-db ]
+    buildpacks:
+      - nodejs_buildpack
+      - staticfile_buildpack
+#    env:
+#      BP_NODE_RUN_SCRIPTS: build
+#      BP_WEB_SERVER_ROOT: build
+

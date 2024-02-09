@@ -1,0 +1,97 @@
+Retrieving logs for app where-for-dinner-ui in org dev / space dev as admin...
+
+   2024-02-08T14:12:02.54-0500 [API/0] OUT Added process: "web"
+   2024-02-08T14:12:02.56-0500 [API/0] OUT Created app with guid 318def5e-f1aa-44f3-b400-66dcb1c1f5a4
+   2024-02-08T14:12:02.58-0500 [API/0] OUT Applied manifest to app with guid 318def5e-f1aa-44f3-b400-66dcb1c1f5a4 (---
+   2024-02-08T14:12:02.59-0500 [API/0] OUT applications:
+   2024-02-08T14:12:02.59-0500 [API/0] OUT - name: where-for-dinner-ui
+   2024-02-08T14:12:02.59-0500 [API/0] OUT   path: "/Users/jlafata/tanzu-workshops/where-for-dinner/where-for-dinner-ui"
+   2024-02-08T14:12:02.59-0500 [API/0] OUT   default-route: true
+   2024-02-08T14:12:02.59-0500 [API/0] OUT   buildpacks:
+   2024-02-08T14:12:02.59-0500 [API/0] OUT   - nodejs_buildpack
+   2024-02-08T14:12:02.60-0500 [API/0] OUT   - https://github.com/cloudfoundry/nginx-buildpack.git
+   2024-02-08T14:12:02.60-0500 [API/0] OUT   env: "[PRIVATE DATA HIDDEN]"
+   2024-02-08T14:12:02.60-0500 [API/0] OUT   metadata:
+   2024-02-08T14:12:02.60-0500 [API/0] OUT     labels:
+   2024-02-08T14:12:02.60-0500 [API/0] OUT       app: where-for-dinner-ui
+   2024-02-08T14:12:02.60-0500 [API/0] OUT       foundation: homelab
+   2024-02-08T14:12:02.60-0500 [API/0] OUT )
+   2024-02-08T14:13:17.50-0500 [API/0] OUT Uploading app package for app with guid 318def5e-f1aa-44f3-b400-66dcb1c1f5a4
+   2024-02-08T14:14:21.29-0500 [API/0] OUT Creating build for app with guid 318def5e-f1aa-44f3-b400-66dcb1c1f5a4
+   2024-02-08T14:14:21.52-0500 [STG/0] OUT Downloading nodejs_buildpack...
+   2024-02-08T14:14:21.53-0500 [STG/0] OUT Downloaded nodejs_buildpack
+   2024-02-08T14:14:21.53-0500 [STG/0] OUT Cell d0355e4e-f737-440c-857f-5ce8ba6829a6 creating container for instance 95540196-097b-4f3f-aa35-1b02c59f532b
+   2024-02-08T14:14:21.93-0500 [STG/0] OUT Cell d0355e4e-f737-440c-857f-5ce8ba6829a6 successfully created container for instance 95540196-097b-4f3f-aa35-1b02c59f532b
+   2024-02-08T14:14:22.58-0500 [STG/0] OUT Downloading app package...
+   2024-02-08T14:14:30.44-0500 [STG/0] OUT Downloaded app package (65.8M)
+   2024-02-08T14:14:32.96-0500 [STG/0] OUT -----> Nodejs Buildpack version 1.8.15
+   2024-02-08T14:14:35.87-0500 [STG/0] OUT -----> Bootstrapping python
+   2024-02-08T14:14:35.87-0500 [STG/0] OUT -----> Installing python 3.11.5
+   2024-02-08T14:14:35.87-0500 [STG/0] OUT        Copy [/tmp/buildpacks/b28c1efffdacbbcb06426517a6a9e875/dependencies/bc6f4ec954fbc665f30ff9079c964182/python_3.11.5_linux_x64_cflinuxfs3_5908f935.tgz]
+   2024-02-08T14:14:42.69-0500 [STG/0] OUT -----> Installing binaries
+   2024-02-08T14:14:42.69-0500 [STG/0] OUT        engines.node (package.json): unspecified
+   2024-02-08T14:14:42.69-0500 [STG/0] OUT        engines.npm (package.json): unspecified (use default)
+   2024-02-08T14:14:42.69-0500 [STG/0] OUT        [31;1m**WARNING**[0m Node version not specified in package.json or .nvmrc. See: http://docs.cloudfoundry.org/buildpacks/node/node-tips.html
+   2024-02-08T14:14:42.69-0500 [STG/0] OUT -----> Installing node 18.17.1
+   2024-02-08T14:14:42.69-0500 [STG/0] OUT        Copy [/tmp/buildpacks/b28c1efffdacbbcb06426517a6a9e875/dependencies/1f53ef5deb872f84c8e0b88696475b31/node_18.17.1_linux_x64_cflinuxfs3_c92a5ae0.tgz]
+   2024-02-08T14:14:45.98-0500 [STG/0] OUT        Using default npm version: 9.6.7
+   2024-02-08T14:14:45.98-0500 [STG/0] OUT -----> Installing yarn 1.22.19
+   2024-02-08T14:14:45.98-0500 [STG/0] OUT        Copy [/tmp/buildpacks/b28c1efffdacbbcb06426517a6a9e875/dependencies/0f06052381cbcef1593bd279ca3d9458/yarn_1.22.19_linux_noarch_any-stack_32d0e82e.tgz]
+   2024-02-08T14:14:46.54-0500 [STG/0] OUT        Installed yarn 1.22.19
+   2024-02-08T14:14:46.54-0500 [STG/0] OUT -----> Creating runtime environment
+   2024-02-08T14:14:46.55-0500 [STG/0] OUT        NODE_ENV=production
+   2024-02-08T14:14:46.55-0500 [STG/0] OUT        NODE_HOME=/tmp/contents880697036/deps/0/node
+   2024-02-08T14:14:46.55-0500 [STG/0] OUT        NODE_MODULES_CACHE=true
+   2024-02-08T14:14:46.55-0500 [STG/0] OUT        NODE_VERBOSE=false
+   2024-02-08T14:14:46.55-0500 [STG/0] OUT        NPM_CONFIG_LOGLEVEL=error
+   2024-02-08T14:14:46.55-0500 [STG/0] OUT        NPM_CONFIG_PRODUCTION=true
+   2024-02-08T14:14:46.55-0500 [STG/0] OUT -----> Building dependencies
+   2024-02-08T14:14:46.55-0500 [STG/0] OUT        Prebuild detected (node_modules already exists)
+   2024-02-08T14:14:46.55-0500 [STG/0] OUT        Rebuilding any native modules
+   2024-02-08T14:14:49.31-0500 [STG/0] OUT rebuilt dependencies successfully
+   2024-02-08T14:14:49.31-0500 [STG/0] OUT npm notice 
+   2024-02-08T14:14:49.31-0500 [STG/0] OUT npm notice New major version of npm available! 9.6.7 -> 10.4.0
+   2024-02-08T14:14:49.31-0500 [STG/0] OUT npm notice Changelog: <https://github.com/npm/cli/releases/tag/v10.4.0>
+   2024-02-08T14:14:49.31-0500 [STG/0] OUT npm notice Run `npm install -g npm@10.4.0` to update!
+   2024-02-08T14:14:49.31-0500 [STG/0] OUT npm notice 
+   2024-02-08T14:14:49.33-0500 [STG/0] OUT        Installing any new modules (package.json + package-lock.json)
+   2024-02-08T14:14:55.81-0500 [STG/0] OUT up to date in 6s
+   2024-02-08T14:14:55.81-0500 [STG/0] OUT 44 packages are looking for funding
+   2024-02-08T14:14:55.81-0500 [STG/0] OUT   run `npm fund` for details
+   2024-02-08T14:14:58.04-0500 [STG/0] OUT -----> Download go 1.19
+   2024-02-08T14:15:10.42-0500 [STG/0] OUT -----> Running go build supply
+   2024-02-08T14:15:10.42-0500 [STG/0] OUT /tmp/buildpackdownloads/adf6125a52c1a65c9523985b5a87ec38 ~
+   2024-02-08T14:15:17.63-0500 [STG/0] OUT -----> Nginx Buildpack version 1.2.10
+   2024-02-08T14:15:17.63-0500 [STG/0] OUT -----> Supplying nginx
+   2024-02-08T14:15:17.63-0500 [STG/0] OUT -----> No nginx version specified - using mainline => 1.25.3
+   2024-02-08T14:15:17.63-0500 [STG/0] OUT -----> Installing nginx 1.25.3
+   2024-02-08T14:15:17.63-0500 [STG/0] OUT        Download [https://buildpacks.cloudfoundry.org/dependencies/nginx/nginx_1.25.3_linux_x64_cflinuxfs3_da337929.tgz]
+   2024-02-08T14:15:20.42-0500 [STG/0] OUT -----> Running go build finalize
+   2024-02-08T14:15:20.42-0500 [STG/0] OUT /tmp/buildpackdownloads/adf6125a52c1a65c9523985b5a87ec38 ~
+   2024-02-08T14:15:21.44-0500 [STG/0] OUT ~
+   2024-02-08T14:15:39.50-0500 [STG/0] OUT Exit status 0
+   2024-02-08T14:15:39.50-0500 [STG/0] OUT Uploading droplet, build artifacts cache...
+   2024-02-08T14:15:39.50-0500 [STG/0] OUT Uploading droplet...
+   2024-02-08T14:15:39.50-0500 [STG/0] OUT Uploading build artifacts cache...
+   2024-02-08T14:15:39.69-0500 [STG/0] OUT Uploaded build artifacts cache (3.1M)
+   2024-02-08T14:15:40.79-0500 [API/1] OUT Creating droplet for app with guid 318def5e-f1aa-44f3-b400-66dcb1c1f5a4
+   2024-02-08T14:15:48.63-0500 [STG/0] OUT Uploaded droplet (71.1M)
+   2024-02-08T14:15:48.65-0500 [STG/0] OUT Uploading complete
+   2024-02-08T14:15:49.34-0500 [STG/0] OUT Cell d0355e4e-f737-440c-857f-5ce8ba6829a6 stopping instance 95540196-097b-4f3f-aa35-1b02c59f532b
+   2024-02-08T14:15:49.34-0500 [STG/0] OUT Cell d0355e4e-f737-440c-857f-5ce8ba6829a6 destroying container for instance 95540196-097b-4f3f-aa35-1b02c59f532b
+   2024-02-08T14:15:50.34-0500 [API/0] OUT Updated app with guid 318def5e-f1aa-44f3-b400-66dcb1c1f5a4 ({:droplet_guid=>"289364a6-e5b5-4700-a1f0-2ce1a93755e0"})
+   2024-02-08T14:15:50.56-0500 [API/1] OUT Creating revision for app with guid 318def5e-f1aa-44f3-b400-66dcb1c1f5a4
+   2024-02-08T14:15:50.79-0500 [API/1] OUT Restarted app with guid 318def5e-f1aa-44f3-b400-66dcb1c1f5a4
+   2024-02-08T14:15:50.83-0500 [CELL/0] OUT Cell f1af0acd-3427-4bc0-9210-e364238c26e0 creating container for instance f1d5dc48-49db-4426-58a1-b78b
+   2024-02-08T14:15:51.19-0500 [STG/0] OUT Cell d0355e4e-f737-440c-857f-5ce8ba6829a6 successfully destroyed container for instance 95540196-097b-4f3f-aa35-1b02c59f532b
+   2024-02-08T14:15:51.26-0500 [CELL/0] OUT Cell f1af0acd-3427-4bc0-9210-e364238c26e0 successfully created container for instance f1d5dc48-49db-4426-58a1-b78b
+   2024-02-08T14:15:51.64-0500 [CELL/0] OUT Downloading droplet...
+   2024-02-08T14:15:57.02-0500 [CELL/0] OUT Downloaded droplet (71.1M)
+   2024-02-08T14:15:57.02-0500 [CELL/0] OUT Starting health monitoring of container
+   2024-02-08T14:15:59.60-0500 [CELL/0] OUT Container became healthy
+   2024-02-08T14:19:00.42-0500 [APP/PROC/WEB/0] ERR 2024/02/08 19:19:00 [error] 77#0: *11 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 10.255.217.191, server: _, request: "GET / HTTP/1.1", host: "where-for-dinner-ui.apps.h2o-2-22522.h2o.vmware.com"
+   2024-02-08T14:19:00.42-0500 [APP/PROC/WEB/0] OUT 10.255.217.191 - - [08/Feb/2024:19:19:00 +0000] "GET / HTTP/1.1" 500 572 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+   2024-02-08T14:19:00.42-0500 [RTR/2] OUT where-for-dinner-ui.apps.h2o-2-22522.h2o.vmware.com - [2024-02-08T19:19:00.403772405Z] "GET / HTTP/1.1" 500 0 572 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" "10.220.35.194:27487" "192.168.2.59:61014" x_forwarded_for:"10.220.35.194" x_forwarded_proto:"https" vcap_request_id:"81b52ebe-62e7-4135-5b66-f78ebe00a3fe" response_time:0.024327 gorouter_time:0.001915 app_id:"318def5e-f1aa-44f3-b400-66dcb1c1f5a4" app_index:"0" instance_id:"f1d5dc48-49db-4426-58a1-b78b" x_cf_routererror:"-" x_b3_traceid:"81b52ebe62e741355b66f78ebe00a3fe" x_b3_spanid:"5b66f78ebe00a3fe" x_b3_parentspanid:"-" b3:"81b52ebe62e741355b66f78ebe00a3fe-5b66f78ebe00a3fe"
+   2024-02-08T14:19:00.56-0500 [APP/PROC/WEB/0] ERR 2024/02/08 19:19:00 [error] 77#0: *12 rewrite or internal redirection cycle while internally redirecting to "/index.html", client: 10.255.217.191, server: _, request: "GET /favicon.ico HTTP/1.1", host: "where-for-dinner-ui.apps.h2o-2-22522.h2o.vmware.com", referrer: "https://where-for-dinner-ui.apps.h2o-2-22522.h2o.vmware.com/"
+   2024-02-08T14:19:00.56-0500 [APP/PROC/WEB/0] OUT 10.255.217.191 - - [08/Feb/2024:19:19:00 +0000] "GET /favicon.ico HTTP/1.1" 500 572 "https://where-for-dinner-ui.apps.h2o-2-22522.h2o.vmware.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36"
+   2024-02-08T14:19:00.56-0500 [RTR/2] OUT where-for-dinner-ui.apps.h2o-2-22522.h2o.vmware.com - [2024-02-08T19:19:00.545688149Z] "GET /favicon.ico HTTP/1.1" 500 0 572 "https://where-for-dinner-ui.apps.h2o-2-22522.h2o.vmware.com/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/121.0.0.0 Safari/537.36" "10.220.35.194:27487" "192.168.2.59:61014" x_forwarded_for:"10.220.35.194" x_forwarded_proto:"https" vcap_request_id:"4fbaface-ca09-4610-6bdf-86a783e4e7cc" response_time:0.017396 gorouter_time:0.001617 app_id:"318def5e-f1aa-44f3-b400-66dcb1c1f5a4" app_index:"0" instance_id:"f1d5dc48-49db-4426-58a1-b78b" x_cf_routererror:"-" x_b3_traceid:"4fbafaceca0946106bdf86a783e4e7cc" x_b3_spanid:"6bdf86a783e4e7cc" x_b3_parentspanid:"-" b3:"4fbafaceca0946106bdf86a783e4e7cc-6bdf86a783e4e7cc"

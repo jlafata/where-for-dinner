@@ -1,0 +1,22 @@
+routes:
+  # this was a test I setup  to show that we can wrap gateway around response to provide x-frame-options
+  - uri: https://where-for-dinner-ui.apps.h2o-2-22522.h2o.vmware.com/
+    predicates:
+      - Path=/**
+    filters: [
+        "StripPrefix=1"
+    ]
+  - uri: https://where-for-dinner-ui.apps.h2o-2-22522.h2o.vmware.com/
+    predicates:
+      - Path=/diningsearch
+    filters: [
+        "StripPrefix=1"
+    ]
+  - uri: http://google.com
+    predicates:
+      - Path=/search
+    filters: [
+       "StripPrefix=0",
+       "RemoveRequestParameter=q",
+       "AddRequestParameter=q,new"
+    ]

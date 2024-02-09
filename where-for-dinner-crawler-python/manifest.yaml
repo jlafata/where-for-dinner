@@ -1,0 +1,20 @@
+---
+applications:
+  - name: where-for-dinner-crawler-python
+    path: .
+    # metadata requires cf cli v 7 or higher, I'm using v 8, that works
+    metadata:
+      labels:
+        app: where-for-dinner-crawler-python
+        foundation: homelab
+#    services: [ wfd-search-db ]
+    # managing custom buildpacks in cloud foundry
+    # https://docs.cloudfoundry.org/adminguide/buildpacks.html
+#    buildpacks:
+#      - https://github.com/cloudfoundry/java-buildpack#v4.64.0
+#    env:
+#      JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ }}'
+# to debug cf push
+#      JBP_LOG_LEVEL: DEBUG
+#      JAVA_OPTS: -Dlogging.level.root=DEBUG, -Dlogging.level.org.cloudfoundry=DEBUG, -Dlogging.level.org.springframework=DEBUG
+

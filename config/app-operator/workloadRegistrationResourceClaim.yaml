@@ -1,0 +1,13 @@
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ClassClaim
+metadata:
+  name: appsso-where-for-dinner
+  namespace: workloads
+spec:
+  classRef:
+    name: workloadreg-where-for-dinner
+  parameters:
+    redirectPaths:
+    - /login/oauth2/code/sso
+    workloadRef:
+      name: where-for-dinner

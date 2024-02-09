@@ -1,0 +1,8 @@
+-uri:http://google.com
+predicates:
+-Path=/search
+filters:[
+"StripPrefix=0",
+"RemoveRequestParameter=q",
+"AddRequestParameter=q,new"
+]

@@ -1,0 +1,11 @@
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ClassClaim
+metadata:
+  name: msgbroker-where-for-dinner
+  namespace: workloads
+spec:
+  classRef:
+    name: msgbroker-crossplane-where-for-dinner
+  parameters:
+    replicas: 1
+    serviceNamespace: service-instances

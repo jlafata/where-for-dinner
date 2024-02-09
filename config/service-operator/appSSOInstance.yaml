@@ -1,0 +1,54 @@
+apiVersion: sso.apps.tanzu.vmware.com/v1alpha1
+kind: AuthServer
+metadata:
+  name: appsso-where-for-dinner
+  namespace: service-instances
+  labels:
+    name: appsso-where-for-dinner
+    app: where-for-dinner
+  annotations:
+    sso.apps.tanzu.vmware.com/allow-client-namespaces: '*'
+    sso.apps.tanzu.vmware.com/allow-unsafe-identity-provider: ""
+    sso.apps.tanzu.vmware.com/allow-unsafe-issuer-uri: ""
+spec:
+  tls:
+    deactivated: true
+  tokenSignature:
+    signAndVerifyKeyRef:
+      name: appsso-where-for-dinner-signing-key
+  identityProviders:
+  - name: dev-users
+    internalUnsafe:
+      users:
+      - username: where-for-dinner
+        password: letseat
+        roles:
+        - patron
+---
+apiVersion: secretgen.k14s.io/v1alpha1
+kind: RSAKey
+metadata:
+  name: appsso-where-for-dinner-signing-key
+  namespace: service-instances
+spec:
+  secretTemplate:
+    type: Opaque
+    stringData:
+      key.pem: $(privateKey)
+      pub.pem: $(publicKey)
+---
+apiVersion: sso.apps.tanzu.vmware.com/v1alpha1
+kind: ClusterWorkloadRegistrationClass
+metadata:
+  name: workloadreg-where-for-dinner
+spec:
+  description:
+    short: Where For Dinner AppSSO Workload Registrations
+  base:
+    metadata:
+      annotations:
+        sso.apps.tanzu.vmware.com/template-unsafe-redirect-uris: ""
+    spec:
+      authServerSelector:
+        matchLabels:
+          name: appsso-where-for-dinner

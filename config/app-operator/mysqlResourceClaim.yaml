@@ -1,0 +1,20 @@
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ResourceClaimPolicy
+metadata:
+  name: where-for-dinner-mysql-cross-namespace
+  namespace: service-instances
+spec:
+  consumingNamespaces:
+  - '*'
+  subject:
+    group: with.sql.tanzu.vmware.com
+    kind: MySQL
+---
+apiVersion: services.apps.tanzu.vmware.com/v1alpha1
+kind: ClassClaim
+metadata:
+  name: db-where-for-dinner
+  namespace: workloads
+spec:
+  classRef:
+    name: mysql-where-for-dinner
