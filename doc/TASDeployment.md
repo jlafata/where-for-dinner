@@ -15,13 +15,13 @@ And a Tanzu Application Service Foundation with:
 * Rabbit MQ tile installed
 * Mysql Tile installed
 
-Subsequent testing may investigate integrating with these tiles, currently  
+Subsequent testing may investigate integrating with these tiles:  
 * SSO for Tanzu Application Service (required if using the `Enable Security` option) - see the where-for-dinner-ui project
 * Tanzu Spring Cloud Gateway (required if using the `Spring Cloud Gateway tile for Tanzu Application Service ` option)
 
 ## Quick Start
 
-This section provides a fast track installation of the "simplest" configuration of the Hungry application using the application accelerator and the instructions immediately below.  A more thorough description of the configuration and installation scenarios are describes in subsequent sections of this page.  This section assumes you have already installed the application accelerator using the instructions at the top of the page.
+This section provides a fast track installation of the "simplest" configuration.
 
 from the where-for-dinner parent project
 run the following
@@ -48,13 +48,13 @@ vi src/main/resources/application.yaml
 ### update the where-for-dinner.tas-fqdn-apps-domain and save the changes
 mvn clean package
 cf push
-
+```
 
 ### Monitor and Verify Installation
 
 make sure all applications are running and all servies are successfully created
 
-```code
+```code 
 cf a
 Getting apps in org dev / space dev as admin...
 
@@ -69,7 +69,7 @@ where-for-dinner-search-proc      started           web:1/1, task:0/0   where-fo
 where-for-dinner-ui               started           web:1/1             where-for-dinner-ui.apps.h2o-2-22522.h2o.vmware.com
 
 ```
-
+verify backing services
 ```code
 cf s
 Getting service instances in org dev / space dev as admin...
