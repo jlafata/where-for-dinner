@@ -4,18 +4,19 @@ This document describes a manual Where for Dinner TAS deployment.
 
 ## Prerequisites
 
-These instructions assume that you have a TAP 1.3.x or greater iterate cluster (or some variant similar to an iterate cluster) up and running with the following packages installed and [kubectl](https://kubernetes.io/docs/tasks/tools/) and the Tanzu CLI installed and configured to access your TAP cluster:
+These instructions assume that you have the following installed locally:
 
 * cf cli v7 or higher 
 * jdk version 17,  I used `Using java version 17.0.9-librca`'
 * node installed
 * yarn installed
-* a Tanzu Application Service Foundation
+
+And a Tanzu Application Service Foundation with:
 * Rabbit MQ tile installed
 * Mysql Tile installed
 
 Subsequent testing may investigate integrating with these tiles, currently  
-* SSO for Tanzu Application Servie (required if using the `Enable Security` option) - see the where-for-dinner-ui project
+* SSO for Tanzu Application Service (required if using the `Enable Security` option) - see the where-for-dinner-ui project
 * Tanzu Spring Cloud Gateway (required if using the `Spring Cloud Gateway tile for Tanzu Application Service ` option)
 
 ## Quick Start
