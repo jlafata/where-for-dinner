@@ -1,4 +1,4 @@
-# Tanzu Application Platform (TAP) Deployment
+# Tanzu Application Service (TAS) Deployment
 
 This document describes a manual Where for Dinner TAS deployment.  
 
