@@ -92,6 +92,7 @@ the result on a successful deployment should be
 
 ## if you need it, you can get api-docs for the search api endpoint 
 https://where-for-dinner-search.apps.h2o-2-22522.h2o.vmware.com/v3/api-docs
+https://where-for-dinner-availability.apps.h2o-2-22522.h2o.vmware.com/v3/api-docs
 
 
 ## Uninstall
@@ -100,6 +101,19 @@ https://where-for-dinner-search.apps.h2o-2-22522.h2o.vmware.com/v3/api-docs
 To remove the application from your cluster, navigate to the root directory of the unzipped accelerator file and run the following commands to delete all of the created resources:
 
 ```
+cf unbind-service where-for-dinner-notify wfd-notify-q
+cf unbind-service where-for-dinner-search wfd-notify-q
+cf unbind-service where-for-dinner-search-proc wfd-notify-q
+cf unbind-service where-for-dinner-availability wfd-notify-q
+
+cf unbind-service where-for-dinner-search wfd-search-db
+cf unbind-service where-for-dinner-search-proc wfd-redis-cache
+cf unbind-service where-for-dinner-availability wfd-search-db
+
+cf delete-service wfd-redis-cache -f
+cf delete-service wfd-notify-q -f
+cf delete-service wfd-search-db -f
+
 cf delete where-for-dinner-api-gateway -f 
 cf delete where-for-dinner-ui -f
 cf delete where-for-dinner-search -f
@@ -109,16 +123,6 @@ cf delete where-for-dinner-availability -f
 cf delete where-for-dinner-crawler -f
 cf delete where-for-dinner-crawler-python -f
 
-cf unbind-service where-for-dinner-notify wfd-notify-q
-cf unbind-service where-for-dinner-search wfd-notify-q
-cf unbind-service where-for-dinner-search-proc wfd-notify-q
-cf unbind-service where-for-dinner-availability wfd-notify-q
-
-cf unbind-service where-for-dinner-search wfd-search-db
-cf unbind-service where-for-dinner-search-proc wfd-search-db
-cf unbind-service where-for-dinner-availability wfd-search-db
-
-cf delete-service wfd-notify-q
-cf delete-service wfd-search-db
 
 ```
+

@@ -1,0 +1,11 @@
+---
+instance_limits:
+  min: 2
+  max: 6
+rules:
+- rule_type: http_latency
+  rule_sub_type: avg_95th
+  threshold:
+    min: 250
+    max: 500
+scheduled_limit_changes: []

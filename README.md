@@ -54,11 +54,17 @@ The high level data flow looks like the following:
 
 Note that the event channel protocols are not specified as they can be swapped out with different implementations.  By default, the application uses the RabbitMQ binding for Spring Cloud Streams, but could be swapped for any supported binding.  Because the channel end points are implements as Java `functions`, they are support `CloudEvents` and the event channels can be orchestrated through other mechanisms if available.  As you will see later on, there are provided deployment configurations in this repository for RabbitMQ service binding.
 
+The following diagram DOES display details on backing servcies on TAS using rabbit and mysql queue configuration notes
+
+![](doc/images/DinnerHighLevelArch-rabbitMysql.png)
+
 ### Spring Cloud Streams Implementation
 
 The default build and deployment architecture uses Spring Cloud Streams as the asynchronous messaging implementation with RabbitMQ as the default binding.  The messaging topology is depicted in the following abridged architecture diagram: 
 
 ![](doc/images/SCSMessaging.png)
+ 
+ 
  
 
 
