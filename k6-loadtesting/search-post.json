@@ -1,0 +1,10 @@
+{
+  "name": "test101",
+  "postalCode": 64106,
+  "radius": 50,
+  "diningNames": "Bristol",
+  "startTime": 1709497680000,
+  "endTime": 1710980540000,
+  "continousSearch": true,
+  "sendResultsTo": ""
+}
