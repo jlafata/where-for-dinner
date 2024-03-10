@@ -1,0 +1,9 @@
+.idea
+.idea/vcs.xml
+.mvn
+.DS_Store
+where-for-dinner-parent.iml
+accelerator-info.yaml
+accelerator-log.md
+spring-dependencies.txt
+doc/.DS_Store
