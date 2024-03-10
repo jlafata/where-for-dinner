@@ -2,7 +2,8 @@
 applications:
   - name: where-for-dinner-ui
     path: build
-    memory: 1G
+    instances: 2
+#    memory: 1G
     # metadata requires cf cli v 7 or higher, I'm using v 8, that works
     metadata:
       labels:

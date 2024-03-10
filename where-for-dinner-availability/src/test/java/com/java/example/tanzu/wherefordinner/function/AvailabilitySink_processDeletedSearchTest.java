@@ -11,9 +11,14 @@ import com.java.example.tanzu.wherefordinner.entity.Availability;
 import com.java.example.tanzu.wherefordinner.entity.AvailabilityWindow;
 import com.java.example.tanzu.wherefordinner.model.Search;
 
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.test.context.ActiveProfiles;
+
 import reactor.core.publisher.Flux;
 import reactor.test.StepVerifier;
 
+@ActiveProfiles("local")
 public class AvailabilitySink_processDeletedSearchTest extends SpringBaseTest
 {
 

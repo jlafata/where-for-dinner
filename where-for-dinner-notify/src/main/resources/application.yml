@@ -15,10 +15,10 @@ spring:
     stream:
       defaultBinder: rabbit
       bindings: 
-        notifyAvailability-in-0: 
+        notifyAvailability-in-0:
           destination: where-for-dinner-search-result
           group: where-for-dinner-notify-group
-          consumer: 
+          consumer:
             maxAttempts: 4
             backOffInitialInterval: 15000
             backOffMaxInterval: 60000 

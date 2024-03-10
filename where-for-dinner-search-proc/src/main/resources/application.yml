@@ -22,6 +22,7 @@ spring:
             backOffMaxInterval: 60000 
         processSearch-out-0: 
           destination: where-for-dinner-search-result
+          group: where-for-dinner-search-result-group
 
 server.port: 8083
       

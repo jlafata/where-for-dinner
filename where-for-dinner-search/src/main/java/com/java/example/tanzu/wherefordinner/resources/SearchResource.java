@@ -50,9 +50,9 @@ public class SearchResource
 {
 	protected static final String UNKNOWN_REQUEST_SUBJECT_ID = "ffffffff-ffff-ffff-ffff-ffffffffffff";
 	
-	protected static final String STREAM_BRIDGE_SEARCH_OUTPUT_CHANNLE = "submittedSearches-out-0";
+	protected static final String STREAM_BRIDGE_SEARCH_OUTPUT_CHANNEL = "submittedSearches-out-0";
 	
-	protected static final String STREAM_BRIDGE_DELETE_SEARCH_OUTPUT_CHANNLE = "deletedSearches-out-0";
+	protected static final String STREAM_BRIDGE_DELETE_SEARCH_OUTPUT_CHANNEL = "deletedSearches-out-0";
 	
 	protected SearchRepository searchRepo;
 	
@@ -150,7 +150,7 @@ public class SearchResource
 			}
 				
 			return searchRepo.save(search)
-			           .doOnSuccess(addedSearch -> streamBridge.send(STREAM_BRIDGE_SEARCH_OUTPUT_CHANNLE, addedSearch))
+			           .doOnSuccess(addedSearch -> streamBridge.send(STREAM_BRIDGE_SEARCH_OUTPUT_CHANNEL, addedSearch))
 			    	   .onErrorResume(e -> { 
 			    	    	log.error("Error adding search.", e);
 			    	    	return Mono.error(new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR));
@@ -188,7 +188,7 @@ public class SearchResource
 					}
 					
 					return searchRepo.deleteById(id)
-						.doOnSuccess(addedSearch -> streamBridge.send(STREAM_BRIDGE_DELETE_SEARCH_OUTPUT_CHANNLE, foundSearch))
+						.doOnSuccess(addedSearch -> streamBridge.send(STREAM_BRIDGE_DELETE_SEARCH_OUTPUT_CHANNEL, foundSearch))
 			    	    .onErrorResume(e -> { 
 			    	    	log.error("Error deleting search.", e);
 			    	    	return Mono.error(new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR));

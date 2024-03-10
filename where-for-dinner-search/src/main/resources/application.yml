@@ -1,3 +1,12 @@
+app:
+  version: '@project.version@'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: loggers, env, health, info
+
 server:
   port: 8081
   # When running behind a reverse proxy, this stradedgy needs to be set to ensure
@@ -15,8 +24,8 @@ spring:
   application:
     name: where-for-dinner-search
 
-  sql.init.mode: ALWAYS 
-  sql.init.platform: h2
+#  sql.init.mode: ALWAYS
+#  sql.init.platform: h2
 
   cloud: 
     function:
@@ -28,28 +37,56 @@ spring:
       bindings: 
         submittedSearches-out-0: 
           destination: where-for-dinner-search-criteria
-        deletedSearches-out-0: 
+          group: where-for-dinner-search-criteria-group
+        deletedSearches-out-0:
           destination: where-for-dinner-search-deletion
+          group: where-for-dinner-search-result-group
 
-  r2dbc: 
-    url: r2dbc:h2:mem:///testdb
+#  r2dbc:
+#    url: r2dbc:h2:mem:///testdb
 
 springdoc:
   packages-to-scan: com.java.example.tanzu.wherefordinner.resources
   show-spring-cloud-functions: false
-          
----
 
+---
+spring:
+  config.activate.on-profile: local
+
+  sql.init.mode: ALWAYS
+  sql.init.platform: h2
+
+  r2dbc:
+    url: r2dbc:h2:mem:///testdb
+
+---
+spring:
+  config.activate.on-profile: h2
+
+  sql.init.mode: ALWAYS
+  sql.init.platform: h2
+
+  r2dbc:
+    url: r2dbc:h2:mem:///testdb
+
+---
 spring:
   config.activate.on-profile: mysql
-  
+  jpa.properties.hibernate.default_schema: service_instance_db
+
+  sql.init.mode: ALWAYS
   sql.init.platform: mysql
-  
-  r2dbc: 
+
+  r2dbc:
     #Default properties to work with MariaDB driver
-    properties.sslMode: TRUST  
+    properties.sslMode: TRUST
+    properties.sslTunnelDisableHostVerefication: true
     properties.tlsVersion: TLSv1.2
-    
+
+    url: "r2dbc:pool:mariadb://${vcap.services.wfd-search-db.credentials.hostname}:3306/service_instance_db"
+    username: "${vcap.services.wfd-search-db.credentials.username}"
+    password: "${vcap.services.wfd-search-db.credentials.password}"
+
 ---
 
 spring:
@@ -73,7 +110,6 @@ management:
   health:
     rabbit:
       enabled: false
-
 ---
 
 spring:
