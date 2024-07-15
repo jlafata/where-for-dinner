@@ -130,7 +130,7 @@ spring:
       host: ${spring.redis.host}
       password: ${spring.redis.password}
       port: ${spring.redis.port}
-      ssl.eanbled: ${spring.redis.ssl}
+      ssl.enabled: ${spring.redis.ssl}
   
 management:
   health:
