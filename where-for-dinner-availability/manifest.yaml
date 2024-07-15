@@ -3,6 +3,7 @@ applications:
   - name: where-for-dinner-availability
     path: ./target/where-for-dinner-availability-0.0.1-SNAPSHOT.jar
     instances: 2
+    memory: 0.7G
     # metadata requires cf cli v 7 or higher, I'm using v 8, that works
     metadata:
       labels:

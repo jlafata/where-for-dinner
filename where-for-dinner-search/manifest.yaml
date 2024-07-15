@@ -2,18 +2,19 @@
 applications:
   - name: where-for-dinner-search
     path: ./target/where-for-dinner-search-0.0.1-SNAPSHOT.jar
-#    memory: 1G
+    memory: 0.7G   # 0.6G failed on tAS v4, 0.7G succeeded
     instances: 2
     # metadata requires cf cli v 7 or higher, I'm using v 8, that works
     metadata:
       labels:
         app: where-for-dinner-search
         foundation: homelab
-# try without binding to mysql to because actuator health was down with mysql, try h2
-    services: [ wfd-search-db, wfd-notify-q, latency-autoscaler ]
-    buildpacks:
-      # support for java 21 is called out in this release
-      - https://github.com/cloudfoundry/java-buildpack#v4.64.0
+# binding to mysql requires Spring_profile_active for mysql and application.properties to container a mariadb url
+#    services: [ wfd-search-db, wfd-notify-q, latency-autoscaler ]
+    services: [ wfd-search-db, wfd-notify-q ]
+#    buildpacks:
+#      # support for java 21 is called out in this release
+#      - https://github.com/cloudfoundry/java-buildpack#v4.64.0
     env:
       JBP_CONFIG_OPEN_JDK_JRE: '{ jre: { version: 17.+ }}'
 # to debug cf push

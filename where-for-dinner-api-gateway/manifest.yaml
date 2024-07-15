@@ -2,8 +2,17 @@
 applications:
   - name: where-for-dinner-api-gateway
     path: ./target/where-for-dinner-api-gateway-0.0.1-SNAPSHOT.jar
-    instances: 2
-    # metadata requires cf cli v 7 or higher, I'm using v 8, that works
+#with no memory specified, cf app details following:
+#      state     since                  cpu    memory         disk           logging            details
+#    #0   running   2024-03-06T18:47:15Z   0.5%   251.5M of 1G   291.7M of 1G   0/s of unlimited
+#    #1   running   2024-03-06T19:02:05Z   0.5%   254.5M of 1G   291.7M of 1G   0/s of unlimited
+#
+#  type: task
+#  sidecars:
+#  instances: 0/0
+#  memory usage: 1024M
+###
+    memory: 0.7G
     metadata:
       labels:
         app: where-for-dinner-api-gateway

@@ -4,6 +4,7 @@ applications:
     path: ./target/where-for-dinner-notify-0.0.1-SNAPSHOT.jar
     # metadata requires cf cli v 7 or higher, I'm using v 8, that works
     instances: 1
+    memory: 0.7G   # 0.7G works
     metadata:
       labels:
         app: where-for-dinner-notify

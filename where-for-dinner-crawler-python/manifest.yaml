@@ -3,6 +3,7 @@ applications:
   - name: where-for-dinner-crawler-python
     path: .
     instances: 2
+    memory: 64M
     # metadata requires cf cli v 7 or higher, I'm using v 8, that works
     metadata:
       labels:

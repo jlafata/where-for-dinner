@@ -14,14 +14,15 @@
         <module name="where-for-dinner-notify" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="where-for-dinner-api-gateway" target="17" />
-      <module name="where-for-dinner-availability" target="17" />
-      <module name="where-for-dinner-crawler" target="17" />
-      <module name="where-for-dinner-notify" target="17" />
-      <module name="where-for-dinner-parent" target="1.5" />
-      <module name="where-for-dinner-search" target="17" />
-      <module name="where-for-dinner-search-proc" target="17" />
-    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="where-for-dinner-api-gateway" options="-parameters" />
+      <module name="where-for-dinner-availability" options="-parameters" />
+      <module name="where-for-dinner-crawler" options="-parameters" />
+      <module name="where-for-dinner-notify" options="-parameters" />
+      <module name="where-for-dinner-search" options="-parameters" />
+      <module name="where-for-dinner-search-proc" options="-parameters" />
+    </option>
   </component>
 </project>
